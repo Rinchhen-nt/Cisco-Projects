@@ -1,0 +1,60 @@
+
+Network of 192.168.1.0
+
+No. of Subnets = number of departments = 3
+------------------------
+2 ^ n = no of subnets  |       
+		       |
+2 ^ n = 3              |
+                       |
+n = 2                  |
+		       |
+------------------------
+
+Since, N = 2, then 
+11111111.11111111.11111111.11000000
+
+so, 255.255.255.192 => subnet mask /26
+
+block size is 64
+
+----------------------------
+subnet mask	block size |
+128		128	   |
+192		64	   |
+224		32	   |
+240		16	   |
+248		8	   |
+252		4	   |
+254		2	   |
+255		1	   |
+----------------------------
+
+1st Subnet 
+Subnet mask = 255.255.255.192
+Network ID  = 192.168.1.0
+Range of valid Host = 192.168.1.1 - 192.168.1.62
+Broadcast ID = 192.168.1.63
+
+2nd Subnet 
+Subnet mask = 255.255.255.192
+Network ID  = 192.168.1.64
+Range of valid Host = 192.168.1.65 - 192.168.1.126
+Broadcast ID = 192.168.1.127
+
+3rd Subnet 
+Subnet mask = 255.255.255.192
+Network ID  = 192.168.1.128
+Range of valid Host = 192.168.1.129 - 192.168.1.190
+Broadcast ID = 192.168.1.191
+
+
+
+This network design, is for a branch of a company (for now let's consider XYZ company. This network is intended to be operated separately from the Head Quater network. 
+
+This design consists of one router and one switch (all the devices are of CISCO). The network is designed for three departments, Admin/IT, Finance/HR and Customer Service/Reception. Each department has a wireless network service for users (so I have used Access Points in each department). Also the router is configured for both inter-vlan routing (done by separating the sub-interface for  each vlan i.e. 10,20,30, from the physical interface g0/0), and dhcp service. At the end smartphones are used in each department to test for the wireless connectivity. 
+
+
+
+
+
